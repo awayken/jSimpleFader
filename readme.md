@@ -1,4 +1,4 @@
-# jSimpleFader Demo Page #
+# jSimpleFader #
 
 By [Miles Rausch](http://milesrausch.com)
 
