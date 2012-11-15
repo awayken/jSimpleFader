@@ -4,14 +4,14 @@ By [Miles Rausch](http://milesrausch.com)
 
 jSimpleFader is a jQuery plugin to simply fade between images.
 
-```javascript
+```html
 <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js"></script>
 <script src="jquery.simplefader.js"></script>
 ```
 
 To use your fader, you simply call it on the element containing the image you want to rotate. That image doesn't have to be the only HTML in the element &ndash; the script will use the first image it finds. The only thing you need to provide is the total number of images you want to rotate through. The script assumes you've numbered your images like: "image1.jpg", "image2.jpg", "image3.jpg", &amp;c.
 
-```javascript
+```html
 <div id="fader1">
     <span><img src="images/fader1/1.jpg"></span>
 </div>
@@ -27,7 +27,7 @@ You can optionally pass in an options object. Here are the options you can set:
   * speed &ndash; the speed of rotation (default: 5000 ms)
   * animationSpeed &ndash; the speed of fading (default: 600)
 
-```javascript
+```html
 <div id="fader2">
     <img src="images/fader2/image3.jpg">
 </div>
