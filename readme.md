@@ -24,8 +24,8 @@ The image you provide doesn't have to be the first image in your series, but you
     
 You can optionally pass in an options object. Here are the options you can set:
 
-  * speed &ndash; the speed of rotation (default: 5000 ms)
-  * animationSpeed &ndash; the speed of fading (default: 600)
+  * speed &ndash; the speed of rotation in ms (default: 5000)
+  * animationSpeed &ndash; the speed of fading animation in ms (default: 600)
 
 ```html
 <div id="fader2">
