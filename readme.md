@@ -36,4 +36,4 @@ You can optionally pass in an options object. Here are the options you can set:
 </script>
 ```
 
-Browse the `demo.html` file to see it in action.
+Browse the `demo.html` file to see it in action or browse the [Github Page](http://awayken.github.com/jSimpleFader/).
