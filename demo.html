@@ -29,6 +29,7 @@
     <ul>
         <li>speed &ndash; the speed of rotation (default: 5000 ms)</li>
         <li>animationSpeed &ndash; the speed of fading (default: 600)</li>
+        <li>animationStyle &ndash; the style of animation: fade, crossfade (default: fade)</li>
     </ul>
     
     <div id="fader2">
@@ -37,7 +38,8 @@
     <code><pre>&lt;script&gt;
     $('#fader2').simplefader( 4, {
         speed: 2500,
-        animationSpeed: 300
+        animationSpeed: 300,
+        animationStyle: 'crossfade'
     });
 &lt;/script&gt;</pre></cdoe>
 
@@ -46,7 +48,7 @@
     <script>
         $( window.document ).ready(function() {
             $('#fader1').simplefader( 4 );
-            $('#fader2').simplefader( 4, { speed: 2500, animationSpeed: 300 } );
+            $('#fader2').simplefader( 4, { speed: 2500, animationSpeed: 300, animationStyle: 'crossfade' } );
         });
     </script>
 </body>
