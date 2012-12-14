@@ -67,7 +67,7 @@
     <span class="nt">&lt;img</span> <span class="na">src=</span><span class="s">"images/fader2/image3.jpg"</span><span class="nt">&gt;</span>
 <span class="nt">&lt;/div&gt;</span>
 <span class="nt">&lt;script&gt;</span>
-    <span class="nx">$</span><span class="p">(</span><span class="s1">'#fader2'</span><span class="p">).</span><span class="nx">simplefader</span><span class="p">(</span> <span class="mi">4</span><span class="p">,</span> <span class="p">{</span> <span class="nx">speed</span><span class="o">:</span> <span class="mi">2500</span><span class="p">,</span> <span class="nx">animationSpeed</span><span class="o">:</span> <span class="mi">300</span> <span class="p">}</span> <span class="p">);</span>
+    <span class="nx">$</span><span class="p">(</span><span class="s1">'#fader2'</span><span class="p">).</span><span class="nx">simplefader</span><span class="p">(</span> <span class="mi">4</span><span class="p">,</span> <span class="p">{</span> <span class="nx">speed</span><span class="o">:</span> <span class="mi">2500</span><span class="p">,</span> <span class="nx">animationSpeed</span><span class="o">:</span> <span class="mi">300</span><span class="p">,</span> <span class="nx">animationStyle</span><span class="o">:</span> <span class="s1">'crossfade'</span> <span class="p">}</span> <span class="p">);</span>
 <span class="nt">&lt;/script&gt;</span>
 </pre></div>
       </section>
@@ -81,7 +81,7 @@
     <script>
         $( window.document ).ready(function() {
             $('#fader1').simplefader( 4 );
-            $('#fader2').simplefader( 4, { speed: 2500, animationSpeed: 300 } );
+            $('#fader2').simplefader( 4, { speed: 2500, animationSpeed: 300, animationStyle: 'crossfade' } );
         });
     </script>
     <script src="javascripts/scale.fix.js"></script>
