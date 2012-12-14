@@ -26,13 +26,14 @@ You can optionally pass in an options object. Here are the options you can set:
 
   * speed &ndash; the speed of rotation in ms (default: 5000)
   * animationSpeed &ndash; the speed of fading animation in ms (default: 600)
+  * animationStyle &ndash; the style of animation: fade, crossfade (default: fade)
 
 ```html
 <div id="fader2">
     <img src="images/fader2/image3.jpg">
 </div>
 <script>
-    $('#fader2').simplefader( 4, { speed: 2500, animationSpeed: 300 } );
+    $('#fader2').simplefader( 4, { speed: 2500, animationSpeed: 300, animationStyle: 'crossfade' } );
 </script>
 ```
 
