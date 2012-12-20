@@ -1,5 +1,4 @@
-/*jslint devel: false, browser: true, white: true */
-/*global jQuery: true */
+/*jshint browser:true, jquery:true*/
 (function( $ ){
     "use strict";
 
