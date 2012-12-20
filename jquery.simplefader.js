@@ -6,26 +6,29 @@
         var base = this,
             timer = 0,
             index = 0,
-            imagePathParts = {},
-            parse = '',
-            imageUpdateFade = '',
-            imageUpdateCrossFade = '',
-            getNewRotatorImage = '',
+            images = [],
+            parseImages,
+            imageUpdateFade,
+            imageUpdateCrossFade,
+            getNewRotatorImage,
             imageLoadFade = function() {
                 $( this ).fadeIn( base.options.animationSpeed );
             },
             imageLoadCrossFade = function() {
                 var jself = $( this ),
                     img = jself.prev();
+
                 jself.css({
-                    position: 'inherit',
+                    position: 'static',
                     visibility: 'inherit'
                 });
+
                 img.css({
                     position: 'absolute',
                     zIndex: 10
                 }).fadeOut( base.options.animationSpeed, function() {
                     img.remove();
+                    imageUpdateCrossFade();
                 });
             };
         
@@ -34,8 +37,9 @@
         
         base.$el.data( "simplefader", base );
 
-        parse = function( url ) {
-            var separator = '/',
+        parseImages = function( url ) {
+            var i = 0,
+                separator = '/',
                 reDigit = /\d/,
                 urlAsArray = [],
                 parts = {
@@ -55,35 +59,32 @@
 
             index = parseInt( parts.fileName.match( reDigit )[ 0 ], 10 ) - 1;
 
-            return parts;
+            for ( i = 1; i <= numberOfImages; i++ ) {
+                images.push( parts.directory + parts.filePattern.replace( '#num#', i ) );
+            }
         };
 
         imageUpdateFade = function() {
-            var newRotatorImage = getNewRotatorImage(),
-                img = base.$el.find('img:first-child');
+            var img = base.$el.find('img[src="' + images[ index ] +'"]');
 
             timer = window.setTimeout(function() {
                 img.fadeOut( base.options.animationSpeed, function() {
-                    img.attr( 'src', newRotatorImage );
+                    img.attr( 'src', getNewRotatorImage() );
                     img.load();
+                    imageUpdateFade();
                 });
-                
-                imageUpdateFade();
-
             }, base.options.speed );
         };
 
         imageUpdateCrossFade = function() {
-            var newRotatorImage = getNewRotatorImage(),
-                img = base.$el.find('img:first-child'),
-                newImg = img.clone( true ).attr( 'src', newRotatorImage ).css({
+            var img = base.$el.find('img[src="' + images[ index ] +'"]'),
+                newImg = $('<img src="' + getNewRotatorImage() + '">').css({
                     position: 'absolute',
                     visibility: 'hidden'
-                });
+                }).bind('load', imageLoadCrossFade );
 
             timer = window.setTimeout(function() {
                 newImg.insertAfter( img ).load();
-                imageUpdateCrossFade();
             }, base.options.speed );
         };
 
@@ -94,19 +95,15 @@
             
             if ( index >= numberOfImages ) {
                  index = 0;
-            } else if ( index < 0) {
-                 index = numberOfImages - 1;
             }
             
-            newindex = String( index % numberOfImages + 1 );
+            newindex = String( index % numberOfImages );
 
-            return imagePathParts.directory + imagePathParts.filePattern.replace( '#num#', newindex );
+            return images[ newindex ];
         };
         
         base.init = function() {
             var img = base.$el.find('img:first-child');
-
-            imagePathParts = parse( img.attr('src') );
 
             if( typeof( numberOfImages ) === "undefined" || numberOfImages === null ) {
                 numberOfImages = 1;
@@ -115,6 +112,7 @@
             base.numberOfImages = numberOfImages;
             base.options = $.extend( {}, $.simplefader.defaultOptions, options );
 
+            parseImages( img.attr('src') );
 
             switch( base.options.animationStyle.toLowerCase() ) {
                 case 'crossfade':
