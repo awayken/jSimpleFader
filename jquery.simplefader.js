@@ -17,21 +17,20 @@
             },
             imageLoadCrossFade = function() {
                 var jself = $( this ),
-                    img = jself.siblings('img');
+                    img = jself.prev();
 
                 jself.css({
-                    position: 'inherit',
+                    position: 'static',
                     visibility: 'inherit'
                 });
-console.log( img );
+
                 img.css({
                     position: 'absolute',
                     zIndex: 10
                 }).fadeOut( base.options.animationSpeed, function() {
                     img.remove();
+                    imageUpdateCrossFade();
                 });
-
-                //imageUpdateCrossFade();
             };
         
         base.$el = $( el );
@@ -73,10 +72,8 @@ console.log( img );
                 img.fadeOut( base.options.animationSpeed, function() {
                     img.attr( 'src', getNewRotatorImage() );
                     img.load();
+                    imageUpdateFade();
                 });
-                
-                imageUpdateFade();
-
             }, base.options.speed );
         };
 
@@ -88,7 +85,7 @@ console.log( img );
                 }).bind('load', imageLoadCrossFade );
 
             timer = window.setTimeout(function() {
-                newImg.insertAfter( img );
+                newImg.insertAfter( img ).load();
             }, base.options.speed );
         };
 
