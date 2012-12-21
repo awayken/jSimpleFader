@@ -18,18 +18,20 @@
                 var jself = $( this ),
                     img = jself.prev();
 
-                jself.css({
-                    position: 'static',
-                    visibility: 'inherit'
-                });
+                if ( img.length ) {
+                    jself.css({
+                        position: 'static',
+                        visibility: 'inherit'
+                    });
 
-                img.css({
-                    position: 'absolute',
-                    zIndex: 10
-                }).fadeOut( base.options.animationSpeed, function() {
-                    img.remove();
-                    imageUpdateCrossFade();
-                });
+                    img.css({
+                        position: 'absolute',
+                        zIndex: 10
+                    }).fadeOut( base.options.animationSpeed, function() {
+                        img.remove();
+                        imageUpdateCrossFade();
+                    });
+                }
             };
         
         base.$el = $( el );
@@ -65,7 +67,7 @@
         };
 
         imageUpdateFade = function() {
-            var img = base.$el.find('img[src="' + images[ index ] +'"]');
+            var img = base.$el.find('img:first-child');
 
             timer = window.setTimeout(function() {
                 img.fadeOut( base.options.animationSpeed, function() {
@@ -77,8 +79,9 @@
         };
 
         imageUpdateCrossFade = function() {
-            var img = base.$el.find('img[src="' + images[ index ] +'"]'),
-                newImg = $('<img src="' + getNewRotatorImage() + '">').css({
+            var img = base.$el.find('img:first-child'),
+                cacheBuster = new Date().getMilliseconds(),
+                newImg = $('<img src="' + getNewRotatorImage() + '?v=' + cacheBuster + '">').css({
                     position: 'absolute',
                     visibility: 'hidden'
                 }).bind('load', imageLoadCrossFade );
