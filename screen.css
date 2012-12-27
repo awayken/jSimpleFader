@@ -6,6 +6,10 @@ body {
     padding: 0 1em;
 }
 
+a img {
+    border: none;
+}
+
 h1, h2 {
     font-family: Paprika, arial, sans-serif;
     font-weight: normal;
