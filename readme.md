@@ -4,6 +4,8 @@ By [Miles Rausch](http://milesrausch.com)
 
 jSimpleFader is a jQuery plugin to simply fade between images.
 
+Read more in my blog post: http://www.milesrausch.com/2012/11/16/jsimplefader/
+
 ```html
 <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js"></script>
 <script src="jquery.simplefader.js"></script>
