@@ -43,8 +43,8 @@ You can optionally pass in an options object. Here are the options you can set:
 You need hyperlinks on your images? Well, say no more! Use the `links` option to define a unique hyperlink for each image in your fader. If you don't list enough links, the plugin will use # instead.
 
 ```html
-<div id="fader2">
-    <img src="images/fader2/image3.jpg">
+<div id="fader3">
+    <a href="http://google.com" target="_blank"><span><img src="images/fader1/1.jpg"></span></a>
 </div>
 <script>
     $('#fader3').simplefader( 4, { links: [ 'http://google.com', 'http://apple.com', 'http://microsoft.com' ] } );
