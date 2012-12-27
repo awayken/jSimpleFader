@@ -17,6 +17,6 @@ code {
     font-family: "Courier New", monotype;
 }
 
-#fader1, #fader2 {
+.fader {
     height: 375px;
 }
