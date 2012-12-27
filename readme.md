@@ -27,6 +27,7 @@ You can optionally pass in an options object. Here are the options you can set:
   * speed &ndash; the speed of rotation in ms (default: 5000)
   * animationSpeed &ndash; the speed of fading animation in ms (default: 600)
   * animationStyle &ndash; the style of animation: fade, crossfade (default: fade)
+  * links &ndash; an array of hyperlinks
 
 ```html
 <div id="fader2">
@@ -34,6 +35,17 @@ You can optionally pass in an options object. Here are the options you can set:
 </div>
 <script>
     $('#fader2').simplefader( 4, { speed: 2500, animationSpeed: 300, animationStyle: 'crossfade' } );
+</script>
+```
+
+You need hyperlinks on your images? Well, say no more! Use the `links` option to define a unique hyperlink for each image in your fader. If you don't list enough links, the plugin will use # instead.
+
+```html
+<div id="fader2">
+    <img src="images/fader2/image3.jpg">
+</div>
+<script>
+    $('#fader3').simplefader( 4, { links: [ 'http://google.com', 'http://apple.com', 'http://microsoft.com' ] } );
 </script>
 ```
 
