@@ -40,7 +40,7 @@
 
 <p>To use your fader, you simply call it on the element containing the image you want to rotate. That image doesn't have to be the only HTML in the element – the script will use the first image it finds. The only thing you need to provide is the total number of images you want to rotate through. The script assumes you've numbered your images like: "image1.jpg", "image2.jpg", "image3.jpg", &amp;c.</p>
 
-<div id="fader1">
+<div id="fader1" class="fader">
     <span><img src="images/fader1/1.jpg"></span>
 </div>
 <div class="highlight"><pre><span class="nt">&lt;div</span> <span class="na">id=</span><span class="s">"fader1"</span><span class="nt">&gt;</span>
@@ -59,9 +59,10 @@
 <li>speed – the speed of rotation in ms (default: 5000)</li>
 <li>animationSpeed – the speed of fading animation in ms (default: 600)</li>
 <li>animationStyle &ndash; the style of animation: fade, crossfade (default: fade)</li>
+<li>links &ndash; an array of hyperlinks</li>
 </ul>
 
-<div id="fader2">
+<div id="fader2" class="fader">
         <img src="images/fader2/image3.jpg">
     </div>
 <div class="highlight"><pre><span class="nt">&lt;div</span> <span class="na">id=</span><span class="s">"fader2"</span><span class="nt">&gt;</span>
@@ -71,6 +72,20 @@
     <span class="nx">$</span><span class="p">(</span><span class="s1">'#fader2'</span><span class="p">).</span><span class="nx">simplefader</span><span class="p">(</span> <span class="mi">4</span><span class="p">,</span> <span class="p">{</span> <span class="nx">speed</span><span class="o">:</span> <span class="mi">2500</span><span class="p">,</span> <span class="nx">animationSpeed</span><span class="o">:</span> <span class="mi">300</span><span class="p">,</span> <span class="nx">animationStyle</span><span class="o">:</span> <span class="s1">'crossfade'</span> <span class="p">}</span> <span class="p">);</span>
 <span class="nt">&lt;/script&gt;</span>
 </pre></div>
+
+<p>You need hyperlinks on your images? Well, say no more! Use the `links` option to define a unique hyperlink for each image in your fader. If you don't list enough links, the plugin will use # instead.</p>
+
+    <div id="fader3" class="fader">
+        <a href="http://google.com" target="_blank"><span><img src="images/fader1/1.jpg"></span></a>
+    </div>
+<div class="highlight"><pre><span class="nt">&lt;div</span> <span class="na">id=</span><span class="s">"fader3"</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;a</span> <span class="na">href=</span><span class="s">"http://google.com"</span> <span class="na">target=</span><span class="s">"_blank"</span><span class="nt">&gt;&lt;span&gt;&lt;img</span> <span class="na">src=</span><span class="s">"images/fader1/1.jpg"</span><span class="nt">&gt;&lt;/span&gt;&lt;/a&gt;</span>
+<span class="nt">&lt;/div&gt;</span>
+<span class="nt">&lt;script&gt;</span>
+    <span class="nx">$</span><span class="p">(</span><span class="s1">'#fader3'</span><span class="p">).</span><span class="nx">simplefader</span><span class="p">(</span> <span class="mi">4</span><span class="p">,</span> <span class="p">{</span> <span class="nx">links</span><span class="o">:</span> <span class="p">[</span> <span class="s1">'http://google.com'</span><span class="p">,<span> <span class="s1">'http://apple.com'</span><span class="p">,<span> <span class="s1">'http://microsoft.com'</span> <span class="p">]</span> <span class="p">}</span> <span class="p">);</span>
+<span class="nt">&lt;/script&gt;</span>
+</pre></div>
+    
       </section>
       <footer>
         <p>This project is maintained by <a href="https://github.com/awayken">awayken</a></p>
@@ -83,6 +98,7 @@
         $( window.document ).ready(function() {
             $('#fader1').simplefader( 4 );
             $('#fader2').simplefader( 4, { speed: 2500, animationSpeed: 300, animationStyle: 'crossfade' } );
+            $('#fader3').simplefader( 4, { links: [ 'http://google.com', 'http://apple.com', 'http://microsoft.com' ] } );
         });
     </script>
     <script src="javascripts/scale.fix.js"></script>

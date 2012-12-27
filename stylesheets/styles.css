@@ -176,7 +176,11 @@ hr {
   margin:0 0 20px;
 }
 
-#fader1, #fader2 {
+a img {
+  border: none;
+}
+
+.fader {
   height: 375px;
   margin-bottom: 1em;
 }
