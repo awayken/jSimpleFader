@@ -37,3 +37,5 @@ $RECYCLE.BIN/
 
 # SublimeText project files
 *.sublime-workspace
+
+node_modules/

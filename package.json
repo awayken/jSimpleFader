@@ -1,0 +1,27 @@
+{
+  "name": "jSimpleFader",
+  "version": "1.0.0",
+  "description": "jSimpleFader is a jQuery plugin to simply fade between images.",
+  "main": "dist/jquery.simplefader.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/awayken/jSimpleFader.git"
+  },
+  "keywords": [
+    "jquery",
+    "image",
+    "fader"
+  ],
+  "author": "Miles Rausch",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/awayken/jSimpleFader/issues"
+  },
+  "homepage": "https://github.com/awayken/jSimpleFader",
+  "devDependencies": {
+    "gulp": "^3.8.9"
+  }
+}
