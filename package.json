@@ -1,27 +1,37 @@
 {
-  "name": "jSimpleFader",
+  "name": "jsimplefader",
   "version": "1.0.0",
-  "description": "jSimpleFader is a jQuery plugin to simply fade between images.",
-  "main": "dist/jquery.simplefader.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+  "description": "jSimpleFader",
+  "keywords": [
+    "jquery-plugin"
+  ],
+  "homepage": "https://github.com/awayken/jsimplefader",
+  "bugs": "https://github.com/awayken/jSimpleFader/issues",
+  "author": {
+    "name": "Miles Rausch",
+    "email": "miles@milesrausch.com",
+    "url": "https://github.com/awayken"
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/awayken/jSimpleFader.git"
+    "url": "https://github.com/awayken/jsimplefader.git"
   },
-  "keywords": [
-    "jquery",
-    "image",
-    "fader"
+  "licenses": [
+    {
+      "type": "MIT"
+    }
   ],
-  "author": "Miles Rausch",
-  "license": "MIT",
-  "bugs": {
-    "url": "https://github.com/awayken/jSimpleFader/issues"
-  },
-  "homepage": "https://github.com/awayken/jSimpleFader",
   "devDependencies": {
-    "gulp": "^3.8.9"
+    "grunt-contrib-jshint": "~0.10.0",
+    "grunt-contrib-qunit": "~0.5.1",
+    "grunt-contrib-concat": "~0.4.0",
+    "grunt-contrib-uglify": "~0.5.0",
+    "grunt-contrib-watch": "~0.6.1",
+    "grunt-contrib-clean": "~0.5.0",
+    "grunt-contrib-connect": "~0.8.0",
+    "time-grunt": "~0.3.2",
+    "load-grunt-tasks": "~0.6.0",
+    "jshint-stylish": "~0.2.0",
+    "grunt": "~0.4.5"
   }
 }
