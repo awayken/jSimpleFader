@@ -1,0 +1,67 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>jSimpleFader Demo Page</title>
+    <link href='http://fonts.googleapis.com/css?family=Paprika' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="screen.css">
+</head>
+<body>
+    <h1>jSimpleFader Demo Page</h1>
+    <p>By <a href="http://milesrausch.com">Miles Rausch</a></p>
+
+    <p>Check out <a href="http://www.milesrausch.com/2012/11/16/jsimplefader/" title="jSimpleFader">the blog post on MilesRausch.com</a>.</p>
+
+    <h2>Fader 1</h2>
+    <p>To use your fader, you simply call it on the element containing the image you want to rotate. That image doesn't have to be the only HTML in the element &ndash; the script will use the first image it finds. The only thing you need to provide is the total number of images you want to rotate through. The script assumes you've numbered your images like: "image1.jpg", "image2.jpg", "image3.jpg", &amp;c.</p>
+
+    <div id="fader1" class="fader">
+        <span><img src="images/fader1/1.jpg"></span>
+    </div>
+    <code><pre>&lt;script&gt;
+    $('#fader1').simplefader( 4 );
+&lt;/script&gt;</pre></code>
+
+    <h2>Fader 2</h2>
+    <p>The image you provide doesn't have to be the first image in your series, but you do need to have images starting at 1. It will start fading from the image you provide, working in order.</p>
+
+    <p>You can optionally pass in an options object. Here are the options you can set:</p>
+    <ul>
+        <li>speed &ndash; the speed of rotation (default: 5000 ms)</li>
+        <li>animationSpeed &ndash; the speed of fading (default: 600)</li>
+        <li>animationStyle &ndash; the style of animation: fade, crossfade (default: fade)</li>
+        <li>links &ndash; an array of hyperlinks</li>
+    </ul>
+
+    <div id="fader2" class="fader">
+        <img src="images/fader2/image2.jpg">
+    </div>
+    <code><pre>&lt;script&gt;
+    $('#fader2').simplefader( 4, {
+        speed: 2500,
+        animationSpeed: 300,
+        animationStyle: 'crossfade'
+    });
+&lt;/script&gt;</pre></code>
+
+    <h2>Fader 3</h2>
+    <p>You need hyperlinks on your images? Well, say no more! Use the `links` option to define a unique hyperlink for each image in your fader. If you don't list enough links, the plugin will use # instead.</p>
+
+    <div id="fader3" class="fader">
+        <a href="http://google.com" target="_blank"><span><img src="images/fader1/1.jpg"></span></a>
+    </div>
+    <code><pre>&lt;script&gt;
+    $('#fader3').simplefader( 4, { links: [ 'http://google.com', 'http://apple.com', 'http://microsoft.com' ] } );
+&lt;/script&gt;</pre></code>
+
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js"></script>
+    <script src="../dist/jquery.simplefader.js"></script>
+    <script>
+        $( window.document ).ready(function() {
+            $('#fader1').simplefader( 4 );
+            $('#fader2').simplefader( 4, { speed: 2500, animationSpeed: 300, animationStyle: 'crossfade' } );
+            $('#fader3').simplefader( 4, { links: [ 'http://google.com', 'http://apple.com', 'http://microsoft.com' ] } );
+        });
+    </script>
+</body>
+</html>
