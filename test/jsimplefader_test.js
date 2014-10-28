@@ -3,22 +3,17 @@
   module('jQuery#simplefader', {
     // This will run before each test in this module.
     setup: function() {
-      this.elems = $('#qunit-fixture').children();
+      this.fader1 = $('#fader1').simplefader( 4 );
+      this.fader2 = $('#fader2').simplefader( 4, { speed: 2500, animationSpeed: 300, animationStyle: 'crossfade' } );
+      this.fader3 = $('#fader3').simplefader( 4, { links: [ 'http://google.com', 'http://apple.com', 'http://microsoft.com' ] } );
     }
   });
 
-  test('is chainable', function() {
-    expect(1);
-    // Not a bad test to run on collection methods.
-    strictEqual(this.elems.simplefader(), this.elems, 'should be chainable');
-  });
-
-  module('jQuery.simplefader');
-
-  test('is simplefader', function() {
-    expect(2);
-    strictEqual($.simplefader(), 'simplefader.', 'should be simplefader');
-    strictEqual($.simplefader({punctuation: '!'}), 'simplefader!', 'should be thoroughly simplefader');
+  test('can attach', function() {
+    expect(3);
+    equal( this.fader1.length, 1 );
+    equal( this.fader2.length, 1 );
+    equal( this.fader3.length, 1 );
   });
 
 }(jQuery));

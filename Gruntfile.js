@@ -25,8 +25,8 @@ module.exports = function (grunt) {
         stripBanners: true
       },
       dist: {
-        src: ['src/<%= pkg.name %>.js'],
-        dest: 'dist/jquery.<%= pkg.name %>.js'
+        src: ['src/jquery.simplefader.js'],
+        dest: 'dist/jquery.simplefader.js'
       }
     },
     uglify: {
@@ -35,7 +35,7 @@ module.exports = function (grunt) {
       },
       dist: {
         src: '<%= concat.dist.dest %>',
-        dest: 'dist/jquery.<%= pkg.name %>.min.js'
+        dest: 'dist/jquery.simplefader.min.js'
       }
     },
     qunit: {
