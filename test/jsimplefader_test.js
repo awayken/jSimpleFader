@@ -59,7 +59,7 @@
       var fader3 = $('#fader3');
 
       this.fader3link = 'http://google.com';
-      this.fader3 = fader3.simplefader( 4, { links: [ 'http://google.com', 'http://apple.com', 'http://microsoft.com' ] } );
+      this.fader3 = fader3.simplefader( 4, { links: [ 'http://google.com', 'http://apple.com', 'http://microsoft.com' ], speed: 2500, animationSpeed: 300, animationStyle: 'crossfade' } );
     }
   });
 
@@ -83,7 +83,7 @@
       notEqual( originalLink, newLink );
 
       start();
-    }, 5800 );
+    }, 2900 );
   });
 
 }( jQuery ));
