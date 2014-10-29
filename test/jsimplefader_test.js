@@ -16,4 +16,9 @@
     equal( this.fader3.length, 1 );
   });
 
+  test('can get simplefader', function() {
+    expect( 1 );
+    equal( $('#fader1').getsimplefader().$el[ 0 ], this.fader1[ 0 ] );
+  });
+
 }(jQuery));

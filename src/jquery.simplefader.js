@@ -181,7 +181,7 @@
 
   // Allows an identity method
   $.fn[ 'get' + pluginName ] = function(){
-      this.data( pluginName );
+      return this.data( pluginName );
   };
 
   // Static method default options.
