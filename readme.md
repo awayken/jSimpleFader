@@ -8,7 +8,7 @@ Read more in my blog post: http://www.milesrausch.com/2012/11/16/jsimplefader/
 
 ```html
 <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js"></script>
-<script src="jquery.simplefader.js"></script>
+<script src="dist/jquery.simplefader.js"></script>
 ```
 
 To use your fader, you simply call it on the element containing the image you want to rotate. That image doesn't have to be the only HTML in the element &ndash; the script will use the first image it finds. The only thing you need to provide is the total number of images you want to rotate through. The script assumes you've numbered your images like: "image1.jpg", "image2.jpg", "image3.jpg", &amp;c.
@@ -23,7 +23,7 @@ To use your fader, you simply call it on the element containing the image you wa
 ```
 
 The image you provide doesn't have to be the first image in your series, but you do need to have images starting at 1. It will start fading from the image you provide, working in order.
-    
+
 You can optionally pass in an options object. Here are the options you can set:
 
   * speed &ndash; the speed of rotation in ms (default: 5000)
@@ -51,4 +51,4 @@ You need hyperlinks on your images? Well, say no more! Use the `links` option to
 </script>
 ```
 
-Browse the `demo.html` file to see it in action or browse the [Github Page](http://awayken.github.com/jSimpleFader/).
+Browse the `demo/index.html` file to see it in action or browse the [Github Page](http://awayken.github.com/jSimpleFader/).
