@@ -58,7 +58,7 @@
     setup: function() {
       var fader3 = $('#fader3');
 
-      this.fader3link = fader3.find('a');
+      this.fader3link = 'http://google.com';
       this.fader3 = fader3.simplefader( 4, { links: [ 'http://google.com', 'http://apple.com', 'http://microsoft.com' ] } );
     }
   });
@@ -76,7 +76,7 @@
 
     setTimeout(function() {
       var newLink = self.fader3.find('a').attr('href'),
-        originalLink = self.fader3link.attr('href');
+        originalLink = self.fader3link;
 
       //console.log( originalLink, newLink );
 
